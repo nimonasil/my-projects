@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>
+        SR FORM</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+</head>
+
+<body>
+    <div class="ff-sect">
+        <header style="text-align:center; padding: 40px 10px 10px;"></header>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Student Registration" style="width:80px; border-radius:50%; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin-bottom:10px;">
+        <h1 style="color:#3730a3; font-size:2.5em; margin:10;">Student Registration Portal</h1>
+        <p style="color:#555; font-size:1.15em; margin-top:10px;">Welcome! Please fill out the form below to register your school.</p>
+    </div>
+</body>
+
+</html>
+</header>
+<div class="all-section" >
+<div class="links">
+    <script>
+        document.querySelectorAll('.links a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('.links a').forEach(function(a) {
+                    a.style.backgroundColor = '#3730a3';
+                });
+                this.style.backgroundColor = '#45a049';
+            });
+        });
+    </script>
+    <div>
+    <a href="/home/nimona/Documents/Nimona/Nimo/student.html">Home</a>
+    
+    <a href="/home/nimona/Documents/Nimona/Nimo/contact.html">Contact Us</a>
+    <a href="/home/nimona/Documents/Nimona/Nimo/abt.html">About us</a>
+    
+   </div>
+
+    <!-- Registration Form Section -->
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2 style="color:#3730a3; text-align:center; margin-bottom:18px; font-size:2em; font-weight:700;">
+            School Registration Form
+        </h2>
+        <form action="/action_page.php" method="post" autocomplete="off">
+            <div class="success-message" style="display:none;" id="successMsg">Registration successful!</div>
+            <div class="error-message" style="display:none;" id="errorMsg">Please fill in all required fields.</div>
+            <div class="feaild-message" style="display:none;" id="feaildMsg">Registration feaild, Please try again.</div>
+            <label style="color: #0c27be;" for="sname">School Name
+			<span style="color:#0c27be;">*</span>
+		</label>
+            <input type="text" id="sname" name="school_name" placeholder="Enter your school name" required>
+
+            <label style="color: #0c27be;" for="dname">Director Name
+			<span style="color:#2f5bd3;">*</span>
+		</label>
+            <input type="text" id="dname" name="director_name" placeholder="Enter director's name" required>
+
+            <label style="color: #0c27be;" for="select">Type of School
+			<span style="color:#3f2fd3;">*</span>
+		</label>
+            <select id="school_type" name="school_type" required>
+			<option value="">Select type</option>
+			<option value="primary">Primary School</option>
+			<option value="secondary">Secondary School</option>
+			<option value="both">Both Primary & Secondary School</option>
+			<option value="college">College</option>
+		</select>
+
+            <label style="color: #0c27be;" for="fname">First Name
+			<span style="color:#2f32d3;">*</span>
+		</label>
+            <input type="text" id="fname" name="first_name" placeholder="Enter your first name" required>
+
+            <label style="color: #0c27be;" for="sname2">Second Name
+			<span style="color:#322fd3;">*</span>
+		</label>
+            <input type="text" id="sname2" name="second_name" placeholder="Enter your second name" required>
+
+            <label style="color: #0c27be;" for="tname">Third Name
+			<span style="color:#3a2fd3;">*</span>
+		</label>
+            <input type="text" id="tname" name="third_name" placeholder="Enter your third name" required>
+
+            <label style="color: #0c27be;" for="grade">Grade
+			<span style="color:#3f2fd3;">*</span>
+		</label>
+            <select id="grade" name="grade">
+			<option value="select">Select grade</option>
+			<option value="grade 9">Grade 9</option>
+			<option value="grade 10">Grade 10</option>
+			<option value="grade 11">Grade 11</option>
+			<option value="grade 12">Grade 12</option>
+		</select>
+
+            <label style="color: #0c27be;" for="confirmation">Confirmation
+			<span style="color:#2f3fd3;">*</span>
+		</label>
+            <select id="confirmation" name="confirmation" required>
+			<option value="">Select</option>
+			<option value="confirm">Confirm</option>
+			<option value="not_confirm">Not Confirm</option>
+		</select>
+       <a href="   /home/nimona/Documents/Nimona/Nimo/payment.html"><button class="another">Next>>></button></a>
+        
+        </form>
+    </div>
+    </div>
+
+    <script>
+        document.querySelector('form').onsubmit = function(e) {
+            var sname = document.getElementById('sname').value.trim();
+            var dname = document.getElementById('dname').value.trim();
+            var schoolType = document.getElementById('school_type').value;
+            var confirmation = document.getElementById('confirmation').value;
+            var errorMsg = document.getElementById('errorMsg');
+            var successMsg = document.getElementById('successMsg');
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+            if (!sname || !dname || !schoolType || !confirmation) {
+                errorMsg.style.display = 'block';
+                e.preventDefault();
+            } else {
+                successMsg.style.display = 'block';
+            }
+        };
+        const footer = document.createElement('footer');
+        footer.style.cssText = "text-align:center; padding:24px 0; background:#3730a3; color:#fff; margin-top:40px; border-radius:0 0 8px 8px; font-size:1em;";
+        footer.innerHTML = "&copy; 2025 Student Registration Portal. All rights reserved.";
+        document.body.appendChild(footer);
+    </script>
+</div>
+</body>
+
+</html>
